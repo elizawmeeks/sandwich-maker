@@ -8,7 +8,7 @@ var Sandwich = (function(maker) {
     totalPrice += toppingPrice;
     var write = $("#stickItHere");
     console.log("totalPrice", totalPrice);
-    write[0].innerHTML = "<h3 class='center-align'>$" + totalPrice + "</h3>";
+    write[0].innerHTML = "<h3 class='center-align'>$" + totalPrice.toFixed(2) + "</h3>";
   };
 
   // Return the new, augmented object with the new method on it
