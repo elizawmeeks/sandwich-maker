@@ -1,24 +1,33 @@
+"use strict";
+
 $(document).ready(function() {
     $('select').material_select();
   });
 
-
 var price = 0;
 var selectedTopping;
 var index;
+let Bread = require("./bread"),
+	Cheese = require("./cheese"),
+	Condiment = require("./condiments"),
+	Meat = require("./meat"),
+	Produce = require("./produce"),
+	Sandwich = require("./SandwichMaker");
 
 $( "#bread" ).change(function(event) {
+	console.log("you clicked bread");
     if (event.target.value === "none"){
     	price = 0;
     	console.log("event.target.value", event.target.value);
     	Sandwich.addTopping(price);
     } else {
 	    console.log("event", event );
+	    console.log("Bread", Bread);
 		index = Number(event.target.value);
 		selectedTopping = event.target.options[index].innerText.toLowerCase();
-		price = Sandwich.addBread(index, selectedTopping);
 		console.log("index", index);
 		console.log("selectedTopping", selectedTopping);
+		price = Bread.addBread(index, selectedTopping);
 		console.log("price", price);
 		Sandwich.addTopping(price);
 	}
@@ -33,7 +42,7 @@ $( "#cheese" ).change(function(event) {
 	    console.log("event", event );
 		index = Number(event.target.value);
 		selectedTopping = event.target.options[index].innerText.toLowerCase();
-		price = Sandwich.addCheese(index, selectedTopping);
+		price = Cheese.addCheese(index, selectedTopping);
 		console.log("index", index);
 		console.log("selectedTopping", selectedTopping);
 		console.log("price", price);
@@ -50,7 +59,7 @@ $( "#condiment" ).change(function(event) {
 	    console.log("event", event );
 		index = Number(event.target.value);
 		selectedTopping = event.target.options[index].innerText.toLowerCase();
-		price = Sandwich.addCondiment(index, selectedTopping);
+		price = Condiment.addCondiment(index, selectedTopping);
 		console.log("index", index);
 		console.log("selectedTopping", selectedTopping);
 		console.log("price", price);
@@ -67,7 +76,7 @@ $( "#meat" ).change(function(event) {
 	    console.log("event", event );
 		index = Number(event.target.value);
 		selectedTopping = event.target.options[index].innerText.toLowerCase();
-		price = Sandwich.addMeat(index, selectedTopping);
+		price = Meat.addMeat(index, selectedTopping);
 		console.log("index", index);
 		console.log("selectedTopping", selectedTopping);
 		console.log("price", price);
@@ -84,7 +93,7 @@ $( "#produce" ).change(function(event) {
 	    console.log("event", event );
 		index = Number(event.target.value);
 		selectedTopping = event.target.options[index].innerText.toLowerCase();
-		price = Sandwich.addProduce(index, selectedTopping);
+		price = Produce.addProduce(index, selectedTopping);
 		console.log("index", index);
 		console.log("selectedTopping", selectedTopping);
 		console.log("price", price);
