@@ -1,29 +1,30 @@
-var Sandwich = (function(maker) {
+"use strict";
 
   // Private variable to store the different meat prices
-  var breadPrices = [{white: .10}, {wheat: .15}, {seeded: .20}, {sub: .25}];
+var breadPrices = [{white: 0.10}, {wheat: 0.15}, {seeded: 0.20}, {sub: 0.25}];
+
+let bread = {};
 
   // Augment the original object with another method
-  maker.addBread = function(index, topping) {
-  	console.log("bread?", topping);
-  	switch(topping){
-  		case "white":
-  			var thisBreadPrice = breadPrices[index].white;
-  			break;
-  		case "wheat":
-  			var thisBreadPrice = breadPrices[index].wheat;
-  			break;
-  		case "seeded":
-  			var thisBreadPrice = breadPrices[index].seeded;
-  			break;
-  		case "sub":
-  			var thisBreadPrice = breadPrices[index].sub;
-  			break;
-  	}
+bread.addBread = function (index, topping) {
+	console.log("bread?", topping);
+	switch(topping){
+		case "white":
+			var thisBreadPrice = breadPrices[index].white;
+			break;
+		case "wheat":
+			thisBreadPrice = breadPrices[index].wheat;
+			break;
+		case "seeded":
+			thisBreadPrice = breadPrices[index].seeded;
+			break;
+		case "sub":
+			thisBreadPrice = breadPrices[index].sub;
+			break;
+	}
 
-  	return thisBreadPrice;
-  };
+	return thisBreadPrice;
+};
 
   // Return the new, augmented object with the new method on it
-  return maker;
-})(Sandwich || {});
+module.exports = bread;
