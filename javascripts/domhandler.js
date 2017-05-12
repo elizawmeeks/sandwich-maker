@@ -9,6 +9,7 @@ var index;
 
 $( "#bread" ).change(function(event) {
     if (event.target.value === "none"){
+    	price = 0;
     	console.log("event.target.value", event.target.value);
     	Sandwich.addTopping(price);
     } else {
@@ -25,6 +26,7 @@ $( "#bread" ).change(function(event) {
 
 $( "#cheese" ).change(function(event) {
 	if (event.target.value === "none"){
+		price = 0;
     	console.log("event.target.value", event.target.value);
     	Sandwich.addTopping(price);
     } else {
@@ -41,6 +43,7 @@ $( "#cheese" ).change(function(event) {
 
 $( "#condiment" ).change(function(event) {
 	if (event.target.value === "none"){
+		price = 0;
     	console.log("event.target.value", event.target.value);
     	Sandwich.addTopping(price);
     } else {
@@ -57,6 +60,7 @@ $( "#condiment" ).change(function(event) {
 
 $( "#meat" ).change(function(event) {
     if (event.target.value === "none"){
+    	price = 0;
     	console.log("event.target.value", event.target.value);
     	Sandwich.addTopping(price);
     } else {
@@ -73,6 +77,7 @@ $( "#meat" ).change(function(event) {
 
 $( "#produce" ).change(function(event) {
 	if (event.target.value === "none"){
+		price = 0;
     	console.log("event.target.value", event.target.value);
     	Sandwich.addTopping(price);
     } else {

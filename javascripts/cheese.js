@@ -18,7 +18,7 @@ var Sandwich = (function(maker) {
   		case "havarti":
   			var thisCheesePrice = cheesePrices[index].havarti;
   			break;
-  		case "pepperjack":
+  		case "pepper jack":
   			var thisCheesePrice = cheesePrices[index].pepperjack;
   			break;
   	}
